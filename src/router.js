@@ -35,12 +35,12 @@ export default new Router({
       props: true
     },
     {
-      path: '/startup/create',
+      path: '/startup_create',
       name: 'startup_create',
       component: Startup_create
     },
     {
-      path: '/startup/config',
+      path: '/startup_config',
       name: 'startup_config',
       component: Startup_config
     },
@@ -51,7 +51,7 @@ export default new Router({
       props: true
     },
     {
-      path: '/user/config',
+      path: '/user_config',
       name: 'user_config',
       component: User_config
     },

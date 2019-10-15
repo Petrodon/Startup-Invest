@@ -25,6 +25,7 @@
                         <v-btn color="success">Investir</v-btn>
                     </v-row>
                 </v-col>
+
                 <v-col cols="7">
                     <v-card>
                         <v-card-title>Descrição</v-card-title>
@@ -44,26 +45,28 @@ export default {
         return {
             moneyRules: [v => v>=0 || "Deve ser um valor válido"],
             money: 0,
-            startup: {}
+            startup: {},
         }
     },
+
     computed: {
         ... mapState({
             startups: state => state.startups
         })
     },
+
+    props: {
+        id: String
+    },
+
     mounted: function () {
-        for (var i=0; i < this.startups.length; i++) {
+        for (var i=0; i <= this.startups.length; i++) {
             if (this.startups[i]._id == this.id) {
                 this.startup = this.startups[i]
             }
         }
     },
-    props: {
-        id: {
-            type: String
-        }
-    },
+
     methods: {
         m_change() {
             if (this.money < 0) {
